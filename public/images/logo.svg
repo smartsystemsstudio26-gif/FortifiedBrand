@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1000" height="1000">
+  <!-- Transparent background, vector notched emblem logo -->
+  <g>
+    <!-- Outer Contour Stroke -->
+    <path
+      d="M 40,6 C 45,15 55,15 60,6 A 44,44 0 0 1 94,40 C 85,45 85,55 94,60 A 44,44 0 0 1 60,94 C 55,85 45,85 40,94 A 44,44 0 0 1 6,60 C 15,55 15,45 6,40 A 44,44 0 0 1 40,6 Z"
+      fill="#000000"
+      stroke="#000000"
+      stroke-width="2"
+    />
+    <!-- Inner White Accent Contour Ring -->
+    <path
+      d="M 40.5,9 C 45,17 55,17 59.5,9 A 41,41 0 0 1 91,40.5 C 83,45 83,55 91,59.5 A 41,41 0 0 1 59.5,91 C 55,83 45,83 40.5,91 A 41,41 0 0 1 9,59.5 C 17,55 17,45 9,40.5 A 41,41 0 0 1 40.5,9 Z"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="1.8"
+    />
+    <!-- Solid Black Central Emblem Body -->
+    <path
+      d="M 41,11 C 45,18 55,18 59,11 A 38,38 0 0 1 89,41 C 82,45 82,55 89,59 A 38,38 0 0 1 59,89 C 55,82 45,82 41,89 A 38,38 0 0 1 11,59 C 18,45 18,45 11,41 A 38,38 0 0 1 41,11 Z"
+      fill="#000000"
+    />
+    <!-- White Stylized Monogram Center Graphic -->
+    <g fill="#FFFFFF">
+      <!-- Left 'F' Stem -->
+      <rect x="36" y="36" width="4.5" height="28" />
+      <!-- Left 'F' Top Arm -->
+      <rect x="36" y="36" width="20" height="5.5" />
+      <!-- Left 'F' Middle Arm -->
+      <rect x="36" y="47.5" width="13" height="5" />
+
+      <!-- Center '!' Exclamation -->
+      <rect x="48" y="36" width="3.5" height="16.5" />
+      <rect x="48" y="58.5" width="3.5" height="5.5" />
+
+      <!-- Right 'd'/'B' Stem & Bars -->
+      <rect x="59.5" y="36" width="4.5" height="28" />
+      <rect x="51.5" y="47.5" width="12.5" height="5" />
+      <rect x="51.5" y="58.5" width="12.5" height="5.5" />
+    </g>
+  </g>
+</svg>
