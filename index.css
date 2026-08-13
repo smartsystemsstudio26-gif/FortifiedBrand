@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 0 0% 88%;
+    --muted-foreground: 0 0% 34%;
+    --accent: 0 0% 86%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 84%;
+    --input: 0 0% 84%;
+    --ring: 0 0% 34%;
+    --radius: 0.25rem;
+    --font-heading: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    cursor: none;
+  }
+  .admin-page,
+  .admin-page * {
+    cursor: auto;
+  }
+  .admin-page button,
+  .admin-page a,
+  .admin-page [role="button"],
+  .admin-page select,
+  .admin-page .cursor-pointer,
+  .admin-page label {
+    cursor: pointer !important;
+  }
+  .admin-page input,
+  .admin-page textarea {
+    cursor: text !important;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: #050505;
+    color: #f4f4f4;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+  .tracking-monolith { letter-spacing: -0.05em; }
+  .chrome-text {
+    background: linear-gradient(180deg, #050505 0%, #555 55%, #A8A8A8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: rgba(0,0,0,0.04);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .hairline { border-color: rgba(0,0,0,0.12); }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* focus states — chrome outline */
+:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #ccc; }
+
+/* High Contrast Theme Rules & Form Legibility Fixes */
+.bg-black, .bg-neutral-950, .bg-neutral-900, .bg-neutral-800, .bg-\[\#0a0a0a\], .bg-\[\#0A0A0A\], .bg-\[\#050505\] {
+  color: #ffffff;
+}
+
+/* Ensure inputs and selects are always crisp and readable */
+input, select, textarea {
+  color: inherit;
+}
+
+/* Modal and dropdown contrast guarantees */
+.dark-panel {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  border-color: #262626 !important;
+}
+
+.light-panel {
+  background-color: #ffffff !important;
+  color: #0a0a0a !important;
+  border-color: #e5e5e5 !important;
+}
+
+/* ============================================================
+   PROTECTED TONES — not auto-inverted, for the overlay navbar
+   and custom cursor which must adapt to context.
+   ============================================================ */
+.fg-light { color: #ffffff !important; }
+.fg-dark { color: #0a0a0a !important; }
+.group:hover .group-hover\:fg-light { color: #ffffff !important; }
+.group:hover .group-hover\:fg-dark { color: #0a0a0a !important; }
+.surface-light { background-color: #ffffff !important; }
+.surface-dark { background-color: #0a0a0a !important; }
+.border-light { border-color: #ffffff !important; }
+
+/* ============================================================
+   CINEMATIC — keep full-bleed photo sections dark so imagery
+   and white text stay premium on the now-light site.
+   ============================================================ */
+.cinematic .text-white { color: #ffffff !important; }
+.cinematic .text-black { color: #000000 !important; }
+.cinematic .text-\[\#A8A8A8\] { color: #A8A8A8 !important; }
+.cinematic .text-\[\#555\] { color: #555 !important; }
+.cinematic .text-\[\#333\] { color: #333 !important; }
+.cinematic .text-\[\#8A8A8A\] { color: #A8A8A8 !important; }
+.cinematic .bg-white { background-color: #ffffff !important; }
+.cinematic .border-\[\#A8A8A8\]\/50 { border-color: rgba(168,168,168,0.5) !important; }
+.cinematic .hover\:bg-\[\#A8A8A8\]:hover { background-color: #A8A8A8 !important; }
+.cinematic .hover\:border-white:hover { border-color: #ffffff !important; }
+.cinematic .hover\:text-white:hover { color: #ffffff !important; }
+.cinematic .glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.cinematic .hairline { border-color: rgba(168,168,168,0.25); }
+
+/* ============================================================
+   INVOICE / RECEIPT PAPER STYLING
+   Forces pristine white paper background with crisp black text
+   overriding theme inversions.
+   ============================================================ */
+.invoice-paper {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.invoice-paper h1,
+.invoice-paper h2,
+.invoice-paper h3,
+.invoice-paper p,
+.invoice-paper span,
+.invoice-paper div,
+.invoice-paper td,
+.invoice-paper th,
+.invoice-paper strong,
+.invoice-paper b,
+.invoice-paper table {
+  color: #000000 !important;
+}
+.invoice-paper .text-muted,
+.invoice-paper .text-neutral-500,
+.invoice-paper .text-neutral-600,
+.invoice-paper .text-neutral-700 {
+  color: #444444 !important;
+}
+.invoice-paper .badge-black {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.invoice-paper .badge-black * {
+  color: #ffffff !important;
+}
+.invoice-paper .border-black {
+  border-color: #000000 !important;
+}
+.invoice-paper .border-neutral-200 {
+  border-color: #e5e5e5 !important;
+}
